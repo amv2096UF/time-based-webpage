@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time-Based Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        img {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Albert Velazquez</h1>
+    <h2>COP4813 - Web Applications Programming</h2>
+    <h3>Computer Science Major</h3>
+    <p>Welcome to my time-based webpage! The image changes based on your current time.</p>
+    <img id="timeImage" src="" alt="Time of Day Image">
+
+    <script>
+        const imageElement = document.getElementById('timeImage');
+        const hour = new Date().getHours();
+
+        if (hour >= 6 && hour < 12) {
+            // Morning (sunrise)
+            imageElement.src = "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1200&q=80";
+        } else if (hour >= 12 && hour < 18) {
+            // Afternoon (sunny park)
+            imageElement.src = "https://images.unsplash.com/photo-1582719478185-219c90f366d5?auto=format&fit=crop&w=1200&q=80";
+        } else {
+            // Evening/Night (city lights)
+            imageElement.src = "https://images.unsplash.com/photo-1508261305434-e7f9fcf0b91b?auto=format&fit=crop&w=1200&q=80";
+        }
+    </script>
+</body>
+</html>
