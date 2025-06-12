@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time-Based Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        img {
+            width: 80%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Albert Velazquez</h1>
+    <h2>COP4813 - Web Applications Programming</h2>
+    <h3>Computer Science Major</h3>
+    <p>Welcome to my time-based webpage! The image changes based on your current time.</p>
+    <img id="timeImage" src="" alt="Time of Day Image">
+
+    <script>
+        const imageElement = document.getElementById('timeImage');
+        const hour = new Date().getHours();
+
+        if (hour >= 6 && hour < 12) {
+            // Morning
+            imageElement.src = "https://images.unsplash.com/photo-1505483531331-4512e0f7d54c?auto=format&fit=crop&w=1200&q=80";
+        } else if (hour >= 12 && hour < 18) {
+            // Afternoon
+            imageElement.src = "https://images.unsplash.com/photo-1504384764586-bb4cdc1707b0?auto=format&fit=crop&w=1200&q=80";
+        } else {
+            // Night
+            imageElement.src = "https://images.unsplash.com/photo-1503437313881-503a91226402?auto=format&fit=crop&w=1200&q=80";
+        }
+    </script>
+</body>
+</html>
